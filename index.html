@@ -7,7 +7,7 @@
 <meta name="description" content="Restaurante Amelinha: comida caseira, ambiente de família e atendimento nota 1000 na Av. Protásio Alves, Petrópolis, Porto Alegre. Reserve sua mesa pelo WhatsApp." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Karla:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;1,9..144,600&family=Karla:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -110,7 +110,7 @@
     position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
     overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
   }
-  h1,h2,h3{ font-family: var(--font-display); font-weight: 600; text-wrap: balance; margin: 0; }
+  h1,h2,h3{ font-family: var(--font-body); font-weight: 800; text-wrap: balance; margin: 0; letter-spacing: -0.01em; }
   p{ margin: 0; }
   .wrap{ width: 100%; max-width: 1120px; margin-inline: auto; padding-inline: clamp(20px, 5vw, 48px); }
   section{ overflow-x: clip; }
@@ -122,25 +122,11 @@
     border-radius: 4px;
   }
 
-  /* gingham ribbon divider */
-  .ribbon{
-    height: 14px;
-    background-image: conic-gradient(
-      from 90deg,
-      var(--color-cta) 90deg,
-      var(--color-cream) 90deg 180deg,
-      var(--color-cta) 180deg 270deg,
-      var(--color-cream) 270deg
-    );
-    background-size: 14px 14px;
-  }
-
   /* ---------- header ---------- */
   .site-header{
     position: sticky; top: 0; z-index: 50;
-    background: color-mix(in srgb, var(--color-bg) 92%, transparent);
-    backdrop-filter: saturate(140%) blur(8px);
-    border-bottom: 1px solid var(--color-line);
+    background: var(--color-espresso);
+    color: var(--color-cream);
   }
   .nav{
     position: relative;
@@ -150,23 +136,28 @@
   .nav-left{ display: flex; align-items: center; gap: clamp(28px, 4vw, 48px); min-width: 0; }
   .nav-right{ display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
   .logo{
-    font-family: var(--font-display); font-weight: 700; font-style: italic;
-    font-size: 1.5rem; letter-spacing: 0.01em; text-decoration: none;
-    color: var(--color-accent); flex-shrink: 0;
+    display: inline-flex; align-items: center; gap: 10px;
+    font-family: var(--font-body); font-weight: 800;
+    font-size: 1.2rem; letter-spacing: -0.01em; text-decoration: none;
+    color: var(--color-cream); flex-shrink: 0;
   }
+  .logo .mark{
+    width: 34px; height: 34px; border-radius: 9px; background: var(--color-gold);
+    color: var(--color-espresso); display: grid; place-items: center; flex-shrink: 0;
+  }
+  .logo .mark svg{ width: 18px; height: 18px; }
   .nav-menu{ display: block; }
   .nav-links{
     display: flex; gap: clamp(16px, 2.4vw, 28px); list-style: none; margin: 0; padding: 0;
     font-size: 0.95rem; font-weight: 600;
   }
-  .nav-links a{ text-decoration: none; color: var(--color-ink-soft); transition: color .15s ease; }
-  .nav-links a:hover{ color: var(--color-accent); }
+  .nav-links a{ text-decoration: none; color: color-mix(in srgb, var(--color-cream) 82%, transparent); transition: color .15s ease; }
+  .nav-links a:hover{ color: var(--color-gold); }
   .nav-cta{
     display: inline-flex; align-items: center; gap: 8px;
     background: var(--color-cta); color: #FFF7EE;
     padding: 10px 18px; border-radius: 999px; text-decoration: none;
     font-weight: 700; font-size: 0.9rem; white-space: nowrap;
-    box-shadow: var(--shadow-card);
     transition: background .15s ease, transform .15s ease;
   }
   .nav-cta:hover{ background: var(--color-cta-hover); transform: translateY(-1px); }
@@ -174,14 +165,14 @@
   .icon-btn{
     display: inline-flex; align-items: center; justify-content: center;
     width: 40px; height: 40px; border-radius: 50%;
-    background: transparent; border: 1px solid var(--color-line); color: var(--color-ink);
+    background: transparent; border: 1px solid rgba(251,238,220,0.28); color: var(--color-cream);
     transition: background .15s ease, color .15s ease;
   }
-  .icon-btn:hover{ background: var(--color-cta); color: #FFF7EE; border-color: var(--color-cta); }
+  .icon-btn:hover{ background: var(--color-gold); color: var(--color-espresso); border-color: var(--color-gold); }
   .icon-btn svg{ width: 18px; height: 18px; }
   .nav-toggle{
-    display: none; background: none; border: 1px solid var(--color-line);
-    border-radius: 8px; padding: 8px; cursor: pointer; color: var(--color-ink);
+    display: none; background: none; border: 1px solid rgba(251,238,220,0.28);
+    border-radius: 8px; padding: 8px; cursor: pointer; color: var(--color-cream);
   }
   #nav-check{ display: none; }
 
@@ -189,15 +180,14 @@
     .nav-menu{
       display: none;
       position: absolute; top: 100%; left: 0; right: 0;
-      background: var(--color-surface);
-      border-bottom: 1px solid var(--color-line);
-      box-shadow: var(--shadow-card);
+      background: var(--color-espresso);
+      border-bottom: 1px solid rgba(251,238,220,0.14);
     }
     .nav-links{
       flex-direction: column; gap: 0;
       padding: 8px clamp(20px,5vw,48px) 20px;
     }
-    .nav-links a{ display: block; padding: 12px 0; border-bottom: 1px solid var(--color-line); }
+    .nav-links a{ display: block; padding: 12px 0; border-bottom: 1px solid rgba(251,238,220,0.14); }
     .nav-links li:last-child a{ border-bottom: none; }
     #nav-check:checked ~ .nav-menu{ display: block; }
     .nav-toggle{ display: inline-flex; }
@@ -206,46 +196,43 @@
 
   /* ---------- hero ---------- */
   .hero{
-    padding-block: clamp(48px, 8vw, 96px) clamp(56px, 8vw, 96px);
     position: relative;
-    background-color: var(--color-bg);
-    background-image: conic-gradient(
-      from 90deg,
-      color-mix(in srgb, var(--color-accent) 9%, transparent) 90deg,
-      transparent 90deg 180deg,
-      color-mix(in srgb, var(--color-accent) 9%, transparent) 180deg 270deg,
-      transparent 270deg
-    );
-    background-size: 46px 46px;
+    min-height: clamp(460px, 62vw, 620px);
+    display: flex; align-items: center; justify-content: center; text-align: center;
+    padding-block: 64px;
+    color: #FFF7EE;
+    background:
+      linear-gradient(180deg, rgba(42,22,12,0.58), rgba(42,22,12,0.8)),
+      url('images/salao-mesas.png') center/cover no-repeat;
   }
-  .hero-grid{
-    display: grid; grid-template-columns: 1.1fr 0.9fr; gap: clamp(32px, 5vw, 64px);
-    align-items: center;
-  }
-  @media (max-width: 900px){ .hero-grid{ grid-template-columns: 1fr; } }
-  .eyebrow{
-    font-family: var(--font-hand); font-size: 1.4rem; color: var(--color-accent);
-    display: inline-block; margin-bottom: 6px;
+  .hero-inner{ max-width: 760px; margin-inline: auto; }
+  .kicker{
+    font-family: var(--font-body); font-weight: 700; font-size: 0.78rem;
+    text-transform: uppercase; letter-spacing: 0.12em; color: #FBEEDC;
+    display: inline-block; margin-bottom: 22px;
+    background: rgba(251,238,220,0.14); border: 1px solid rgba(251,238,220,0.32);
+    padding: 8px 20px; border-radius: 999px;
   }
   .hero h1{
-    font-size: clamp(2.6rem, 6vw, 4.4rem);
-    line-height: 1.02;
-    color: var(--color-ink);
+    font-size: clamp(2.2rem, 5vw, 3.6rem);
+    line-height: 1.08;
+    color: #FFF7EE;
   }
-  .hero h1 em{ font-style: italic; color: var(--color-accent); }
   .hero-sub{
-    margin-top: 18px; max-width: 46ch; color: var(--color-ink-soft);
+    margin-top: 20px; max-width: 56ch; margin-inline: auto;
+    color: color-mix(in srgb, #FFF7EE 90%, transparent);
     font-size: 1.1rem;
   }
   .rating-pill{
     margin-top: 22px; display: inline-flex; align-items: center; gap: 10px;
-    background: var(--color-surface); border: 1px solid var(--color-line);
-    padding: 10px 16px; border-radius: 999px; box-shadow: var(--shadow-card);
+    background: rgba(251,238,220,0.14); border: 1px solid rgba(251,238,220,0.32);
+    color: #FFF7EE;
+    padding: 10px 16px; border-radius: 999px;
     font-weight: 700; font-size: 0.95rem;
   }
   .stars{ display: inline-flex; gap: 2px; color: var(--color-gold); }
   .stars svg{ width: 16px; height: 16px; }
-  .hero-ctas{ display: flex; flex-wrap: wrap; gap: 14px; margin-top: 28px; }
+  .hero-ctas{ display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; margin-top: 30px; }
   .btn{
     display: inline-flex; align-items: center; gap: 10px;
     padding: 14px 26px; border-radius: 999px; font-weight: 700; font-size: 1rem;
@@ -253,205 +240,168 @@
     transition: transform .15s ease, background .15s ease, box-shadow .15s ease;
   }
   .btn svg{ width: 20px; height: 20px; flex-shrink: 0; }
-  .btn-primary{ background: var(--color-cta); color: #FFF7EE; box-shadow: var(--shadow-card); }
+  .btn-primary{ background: var(--color-cta); color: #FFF7EE; }
   .btn-primary:hover{ background: var(--color-cta-hover); transform: translateY(-2px); }
   .btn-ghost{ background: transparent; border-color: var(--color-ink); color: var(--color-ink); }
   .btn-ghost:hover{ background: var(--color-ink); color: var(--color-bg); }
+  .btn-outline-invert{ background: transparent; border-color: #FFF7EE; color: #FFF7EE; }
+  .btn-outline-invert:hover{ background: #FFF7EE; color: var(--color-cta-hover); }
+  .btn-solid-invert{ background: #FDEBD2; color: var(--color-cta-hover); }
+  .btn-solid-invert:hover{ background: #FFF7EE; }
   .hero-meta{
-    margin-top: 30px; display: flex; flex-wrap: wrap; gap: 18px 28px;
-    font-size: 0.92rem; color: var(--color-ink-soft);
+    margin-top: 28px; display: flex; flex-wrap: wrap; justify-content: center; gap: 14px 26px;
+    font-size: 0.92rem; color: color-mix(in srgb, #FFF7EE 85%, transparent);
   }
   .hero-meta span{ display: inline-flex; align-items: center; gap: 8px; font-weight: 600; }
-  .hero-meta svg{ width: 17px; height: 17px; color: var(--color-accent); flex-shrink: 0; }
+  .hero-meta svg{ width: 17px; height: 17px; color: var(--color-gold); flex-shrink: 0; }
 
-  .hero-photo{
-    position: relative; max-width: 440px; margin-inline: auto;
-    padding-bottom: 18px;
+  /* ---------- photo grid ---------- */
+  .photo-grid{
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px;
   }
-  .hero-photo .frame{
-    border-radius: 22px; overflow: hidden; border: 1px solid var(--color-line);
-    box-shadow: var(--shadow-card);
+  .photo-grid figure{
+    margin: 0; border-radius: 14px; overflow: hidden; border: 1px solid var(--color-line);
   }
-  .hero-photo img{
-    display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover;
-  }
-  .hero-photo .tag{
-    position: absolute; bottom: 0; left: 22px; transform: rotate(-3deg);
-    background: var(--color-cta); color: #FFF7EE; font-family: var(--font-hand);
-    font-size: 1.3rem; padding: 6px 18px 8px; border-radius: 10px;
-    box-shadow: var(--shadow-card);
-  }
+  .photo-grid img{ display: block; width: 100%; height: clamp(180px, 20vw, 240px); object-fit: cover; }
 
-  /* ---------- venue photo banner ---------- */
-  .venue-photo{
-    position: relative; margin: clamp(40px, 6vw, 64px) 0 0;
-  }
-  .venue-photo img{
-    display: block; width: 100%; height: clamp(220px, 36vw, 400px);
-    object-fit: cover;
-  }
-  .venue-photo figcaption{
-    position: absolute; inset: auto 0 0 0; padding: 40px clamp(20px,5vw,48px) 18px;
-    background: linear-gradient(to top, rgba(0,0,0,0.55), transparent);
-    color: #FFF7EE; font-family: var(--font-hand); font-size: 1.4rem;
-  }
-
-  /* ---------- food photos ---------- */
-  .food-photos{
-    display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;
-    margin-bottom: clamp(28px, 4vw, 40px);
-  }
-  @media (max-width: 560px){ .food-photos{ grid-template-columns: 1fr; } }
-  .food-photos figure{
-    margin: 0; border-radius: var(--radius-card); overflow: hidden;
-    box-shadow: var(--shadow-card); border: 1px solid var(--color-line);
-    position: relative;
-  }
-  .food-photos img{
-    display: block; width: 100%; height: clamp(180px, 22vw, 260px); object-fit: cover;
-  }
-  .food-photos figcaption{
-    position: absolute; inset: auto 0 0 0; padding: 28px 18px 12px;
-    background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
-    color: #FFF7EE; font-weight: 700; font-size: 0.92rem; text-transform: lowercase;
-  }
-
-  /* ---------- trust bar ---------- */
-  .trust{
-    background: var(--color-espresso); color: var(--color-cream);
-  }
+  /* ---------- trust / stats bar ---------- */
+  .trust{ background: var(--color-espresso); color: var(--color-cream); }
   .trust-grid{
-    display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;
-    padding-block: 30px;
+    display: grid; grid-template-columns: repeat(4, 1fr);
   }
   @media (max-width: 760px){ .trust-grid{ grid-template-columns: repeat(2, 1fr); } }
-  .trust-item{ text-align: center; }
+  .trust-item{
+    text-align: center; padding-block: 34px; border-left: 1px solid rgba(251,238,220,0.12);
+  }
+  .trust-item:first-child{ border-left: none; }
+  @media (max-width: 760px){ .trust-item:nth-child(2n+1){ border-left: none; } }
   .trust-item strong{
-    display: block; font-family: var(--font-display); font-size: clamp(1.6rem, 3vw, 2.1rem);
+    display: block; font-family: var(--font-body); font-weight: 800; font-size: clamp(1.7rem, 3vw, 2.2rem);
     color: var(--color-gold);
   }
-  .trust-item span{ font-size: 0.85rem; color: color-mix(in srgb, var(--color-cream) 75%, transparent); }
+  .trust-item span{
+    font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase;
+    color: color-mix(in srgb, var(--color-cream) 75%, transparent);
+  }
 
   /* ---------- section heading ---------- */
-  .section{ padding-block: clamp(56px, 9vw, 104px); }
-  .section-head{ max-width: 60ch; margin-bottom: clamp(36px, 5vw, 56px); }
-  .section-head .eyebrow{ font-size: 1.3rem; }
-  .section-head h2{ font-size: clamp(2rem, 4vw, 2.8rem); }
-  .section-head p{ margin-top: 14px; color: var(--color-ink-soft); font-size: 1.05rem; }
+  .section{ padding-block: clamp(56px, 8vw, 96px); }
+  .section-head{ max-width: 56ch; margin: 0 auto clamp(36px, 5vw, 52px); text-align: center; }
+  .section-head h2{ font-size: clamp(1.9rem, 3.6vw, 2.5rem); }
+  .section-head .underline{
+    width: 52px; height: 4px; background: var(--color-accent); border-radius: 999px;
+    margin: 16px auto 0;
+  }
+  .section-head p{ margin-top: 16px; color: var(--color-ink-soft); font-size: 1.05rem; }
   .alt{ background: var(--color-bg-alt); }
 
-  /* ---------- differentiators ---------- */
-  .diff-grid{
-    display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;
+  /* ---------- list card (menu items / faq) ---------- */
+  .list-card{
+    background: var(--color-surface); border: 1px solid var(--color-line);
+    border-radius: var(--radius-card); overflow: hidden;
   }
-  @media (max-width: 900px){ .diff-grid{ grid-template-columns: repeat(2, 1fr); } }
-  @media (max-width: 560px){ .diff-grid{ grid-template-columns: 1fr; } }
-  .diff-card{
-    background: var(--color-surface); border-radius: var(--radius-card);
-    padding: 26px 22px; box-shadow: var(--shadow-card); border: 1px solid var(--color-line);
-  }
-  .diff-card .icon{
-    width: 44px; height: 44px; border-radius: 12px; background: var(--color-accent-soft);
-    display: grid; place-items: center; margin-bottom: 16px; color: var(--color-accent-deep);
-  }
-  .diff-card .icon svg{ width: 22px; height: 22px; }
-  .diff-card h3{ font-size: 1.15rem; margin-bottom: 8px; }
-  .diff-card p{ color: var(--color-ink-soft); font-size: 0.95rem; }
-  .diff-card q{ font-family: var(--font-display); font-style: italic; color: var(--color-ink); }
+  .list-row{ padding: 24px clamp(20px, 4vw, 32px); border-bottom: 1px solid var(--color-line); }
+  .list-row:last-child{ border-bottom: none; }
+  .list-row h3{ font-size: 1.05rem; margin-bottom: 6px; }
+  .list-row p{ color: var(--color-ink-soft); font-size: 0.96rem; }
 
-  /* ---------- menu ---------- */
   .menu-note{
-    margin-top: 28px; display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
+    margin-top: 24px; display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
     background: var(--color-accent-soft); border-radius: var(--radius-card); padding: 20px 24px;
   }
   .menu-note p{ font-size: 0.95rem; color: var(--color-ink); flex: 1; min-width: 220px; }
-  .menu-note strong{ font-family: var(--font-hand); font-size: 1.3rem; color: var(--color-accent-deep); }
+  .menu-note strong{ font-weight: 800; color: var(--color-accent-deep); }
+
+  /* ---------- feature grid (checkmark cards) ---------- */
+  .feature-grid{ display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+  @media (max-width: 700px){ .feature-grid{ grid-template-columns: 1fr; } }
+  .feature-card{
+    background: var(--color-surface); border: 1px solid var(--color-line);
+    border-radius: var(--radius-card); padding: 24px;
+  }
+  .feature-card .check{
+    width: 34px; height: 34px; border-radius: 10px; background: var(--color-accent-soft);
+    color: var(--color-accent-deep); display: grid; place-items: center; margin-bottom: 14px;
+  }
+  .feature-card .check svg{ width: 18px; height: 18px; }
+  .feature-card h3{ font-size: 1.08rem; margin-bottom: 8px; }
+  .feature-card p{ color: var(--color-ink-soft); font-size: 0.95rem; }
+  .feature-card q{ display: block; margin-top: 10px; font-size: 0.9rem; color: var(--color-ink); }
+
+  /* ---------- reason cards (3-up) ---------- */
+  .reason-grid{ display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  @media (max-width: 860px){ .reason-grid{ grid-template-columns: 1fr; } }
+  .reason-card{
+    text-align: center; padding: 28px 22px; border: 1px solid var(--color-line);
+    border-radius: var(--radius-card); background: var(--color-surface);
+  }
+  .reason-card h3{ font-size: 1.05rem; margin-bottom: 8px; }
+  .reason-card p{ color: var(--color-ink-soft); font-size: 0.95rem; }
+
+  /* ---------- story (text + image) ---------- */
+  .story-grid{ display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 5vw, 56px); align-items: center; }
+  @media (max-width: 860px){ .story-grid{ grid-template-columns: 1fr; } }
+  .story-text h2{ font-size: clamp(1.9rem, 3.6vw, 2.5rem); margin-bottom: 20px; }
+  .story-text p{ color: var(--color-ink-soft); margin-bottom: 16px; font-size: 1.02rem; }
+  .story-text .btn{ margin-top: 8px; }
+  .story-photo{ border-radius: var(--radius-card); overflow: hidden; border: 1px solid var(--color-line); }
+  .story-photo img{ width: 100%; height: clamp(240px, 32vw, 380px); object-fit: cover; }
 
   /* ---------- reviews ---------- */
-  .review-grid{
-    display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px;
-  }
+  .review-grid{ display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
   @media (max-width: 900px){ .review-grid{ grid-template-columns: 1fr; } }
   .review-card{
     background: var(--color-surface); border-radius: var(--radius-card);
-    padding: 28px; box-shadow: var(--shadow-card); border: 1px solid var(--color-line);
-    display: flex; flex-direction: column; gap: 16px;
+    padding: 28px; border: 1px solid var(--color-line);
+    display: flex; flex-direction: column; gap: 14px;
   }
+  .review-card .quote-icon{ width: 26px; height: 26px; color: var(--color-accent); }
   .review-card .stars svg{ width: 15px; height: 15px; }
-  .review-card blockquote{
-    margin: 0; font-family: var(--font-display); font-style: italic; font-size: 1.15rem;
-    line-height: 1.4; color: var(--color-ink);
-  }
-  .review-author{ display: flex; align-items: center; gap: 12px; margin-top: auto; }
+  .review-card blockquote{ margin: 0; font-size: 1.02rem; line-height: 1.5; color: var(--color-ink); }
+  .review-author{ display: flex; align-items: center; gap: 12px; margin-top: auto; padding-top: 8px; border-top: 1px solid var(--color-line); }
   .review-avatar{
-    width: 40px; height: 40px; border-radius: 50%; background: var(--color-cta);
-    color: #FFF7EE; display: grid; place-items: center; font-family: var(--font-display);
-    font-weight: 700; flex-shrink: 0;
+    width: 38px; height: 38px; border-radius: 50%; background: var(--color-cta);
+    color: #FFF7EE; display: grid; place-items: center; font-weight: 800;
+    flex-shrink: 0;
   }
   .review-author span{ font-weight: 700; font-size: 0.92rem; display: block; }
   .review-author small{ color: var(--color-ink-soft); font-size: 0.82rem; }
   .review-source{ text-align: center; margin-top: 32px; color: var(--color-ink-soft); font-size: 0.9rem; }
 
-  /* ---------- location ---------- */
-  .loc-grid{
-    display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: stretch;
-  }
+  /* ---------- location cards ---------- */
+  .loc-grid{ display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
   @media (max-width: 860px){ .loc-grid{ grid-template-columns: 1fr; } }
   .loc-card{
     background: var(--color-surface); border-radius: var(--radius-card);
-    border: 1px solid var(--color-line); box-shadow: var(--shadow-card);
-    padding: clamp(24px, 4vw, 36px);
+    border: 1px solid var(--color-line); padding: clamp(24px, 4vw, 32px);
   }
-  .loc-row{ display: flex; gap: 16px; padding-block: 16px; border-bottom: 1px solid var(--color-line); }
-  .loc-row:last-of-type{ border-bottom: none; }
-  .loc-row .icon{
-    width: 40px; height: 40px; border-radius: 10px; background: var(--color-accent-soft);
-    color: var(--color-accent-deep); display: grid; place-items: center; flex-shrink: 0;
-  }
-  .loc-row .icon svg{ width: 20px; height: 20px; }
-  .loc-row h3{ font-size: 1rem; margin-bottom: 4px; }
-  .loc-row p{ color: var(--color-ink-soft); font-size: 0.95rem; }
-  .loc-row a.plain{ text-decoration: underline; text-underline-offset: 3px; color: var(--color-ink); }
-  .loc-map{
-    border-radius: var(--radius-card); overflow: hidden; position: relative;
-    min-height: 320px; box-shadow: var(--shadow-card); border: 1px solid var(--color-line);
-    background:
-      linear-gradient(90deg, var(--color-bg-alt) 1px, transparent 1px) 0 0/32px 32px,
-      linear-gradient(var(--color-bg-alt) 1px, transparent 1px) 0 0/32px 32px,
-      var(--color-bg);
-    display: flex; flex-direction: column; align-items: center; justify-content: center;
-    gap: 18px; text-align: center; padding: 32px;
-  }
-  .loc-map{ text-decoration: none; color: inherit; }
-  .loc-map .pin{ color: var(--color-accent); }
-  .loc-actions{ margin-top: 20px; }
-  .loc-map .pin svg{ width: 48px; height: 48px; }
-  .loc-map h3{ font-family: var(--font-display); font-size: 1.3rem; }
-  .loc-map p{ color: var(--color-ink-soft); max-width: 32ch; font-size: 0.95rem; }
+  .loc-card h3{ display: flex; align-items: center; gap: 10px; font-size: 1.1rem; margin-bottom: 16px; }
+  .loc-card h3 svg{ width: 20px; height: 20px; color: var(--color-accent); flex-shrink: 0; }
+  .loc-card p{ color: var(--color-ink-soft); font-size: 0.98rem; margin-bottom: 10px; }
+  .loc-card a.plain{ text-decoration: underline; text-underline-offset: 3px; color: var(--color-ink); font-weight: 600; }
+  .loc-card .btn{ margin-top: 6px; }
 
   /* ---------- final cta ---------- */
   .final-cta{
-    background: var(--color-cta); color: #FFF7EE; text-align: center;
+    background: var(--color-espresso); color: var(--color-cream); text-align: center;
     padding-block: clamp(56px, 9vw, 88px);
   }
-  .final-cta h2{ color: #FFF7EE; font-size: clamp(2rem, 4.5vw, 3rem); }
-  .final-cta p{ margin-top: 14px; color: color-mix(in srgb, #FFF7EE 82%, transparent); font-size: 1.1rem; }
-  .final-cta .hero-ctas{ justify-content: center; margin-top: 30px; }
-  .final-cta .btn-ghost{ border-color: #FFF7EE; color: #FFF7EE; }
-  .final-cta .btn-ghost:hover{ background: #FFF7EE; color: var(--color-cta-hover); }
-  .final-cta .btn-primary{ background: #FDEBD2; color: var(--color-cta-hover); }
-  .final-cta .btn-primary:hover{ background: #FFF7EE; }
+  .final-cta h2{ color: var(--color-cream); font-size: clamp(1.9rem, 4vw, 2.6rem); }
+  .final-cta p{ margin-top: 14px; color: color-mix(in srgb, var(--color-cream) 82%, transparent); font-size: 1.05rem; }
+  .final-cta .hero-ctas{ justify-content: center; margin-top: 28px; }
 
   /* ---------- footer ---------- */
-  footer{ background: var(--color-espresso); color: var(--color-cream); padding-block: 44px; }
+  footer{ background: var(--color-espresso); color: var(--color-cream); padding-block: 36px; }
   .footer-grid{
     display: flex; flex-wrap: wrap; gap: 24px; justify-content: space-between; align-items: center;
+    padding-bottom: 24px; border-bottom: 1px solid rgba(251,238,220,0.14);
   }
   .footer-logo{ font-family: var(--font-display); font-style: italic; font-weight: 700; font-size: 1.3rem; color: var(--color-gold); }
   .footer-grid p{ font-size: 0.85rem; color: color-mix(in srgb, var(--color-cream) 65%, transparent); }
   .footer-links{ display: flex; gap: 20px; list-style: none; padding: 0; margin: 0; font-size: 0.88rem; }
   .footer-links a{ text-decoration: none; color: color-mix(in srgb, var(--color-cream) 85%, transparent); }
   .footer-links a:hover{ color: var(--color-gold); }
+  .footer-copy{ padding-top: 20px; text-align: center; font-size: 0.8rem; color: color-mix(in srgb, var(--color-cream) 55%, transparent); }
 
   /* reveal-on-scroll */
   .reveal{ opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; }
@@ -473,12 +423,14 @@
   <symbol id="icon-flame" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2s-6 5.5-6 11a6 6 0 0012 0c0-1.5-.5-2.5-1-3.5.2 2-.5 3-1.5 3.5.5-2-.3-3.5-1.5-5C13.5 9.5 12 8 12 2z"/></symbol>
   <symbol id="icon-route" viewBox="0 0 24 24"><path fill="currentColor" d="M6 3a3 3 0 100 6 3 3 0 000-6zM6 7a1 1 0 110-2 1 1 0 010 2zm12 8a3 3 0 100 6 3 3 0 000-6zm0 4a1 1 0 110-2 1 1 0 010 2zM7 8.7V13a4 4 0 004 4h2v2h-2a6 6 0 01-6-6V8.7h2zM17 8v4.3a6 6 0 01-6 6h-.5v-2H11a4 4 0 004-4V8h2z"/></symbol>
   <symbol id="icon-instagram" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2c2.7 0 3.1 0 4.1.1 1.1 0 1.8.2 2.5.5.6.2 1.1.6 1.6 1.1.5.5.8.9 1.1 1.6.3.7.4 1.4.5 2.5.1 1 .1 1.4.1 4.1s0 3.1-.1 4.1c0 1.1-.2 1.8-.5 2.5-.2.6-.6 1.1-1.1 1.6-.5.5-.9.8-1.6 1.1-.7.3-1.4.4-2.5.5-1 .1-1.4.1-4.1.1s-3.1 0-4.1-.1c-1.1 0-1.8-.2-2.5-.5-.6-.2-1.1-.6-1.6-1.1-.5-.5-.8-.9-1.1-1.6-.3-.7-.4-1.4-.5-2.5C2 15.1 2 14.7 2 12s0-3.1.1-4.1c0-1.1.2-1.8.5-2.5.2-.6.6-1.1 1.1-1.6.5-.5.9-.8 1.6-1.1.7-.3 1.4-.4 2.5-.5C8.9 2 9.3 2 12 2zm0 1.8c-2.6 0-2.9 0-4 .1-.9 0-1.4.2-1.7.3-.4.2-.7.3-1 .6-.3.3-.5.6-.6 1-.1.3-.3.8-.3 1.7-.1 1.1-.1 1.4-.1 4s0 2.9.1 4c0 .9.2 1.4.3 1.7.2.4.3.7.6 1 .3.3.6.5 1 .6.3.1.8.3 1.7.3 1.1.1 1.4.1 4 .1s2.9 0 4-.1c.9 0 1.4-.2 1.7-.3.4-.2.7-.3 1-.6.3-.3.5-.6.6-1 .1-.3.3-.8.3-1.7.1-1.1.1-1.4.1-4s0-2.9-.1-4c0-.9-.2-1.4-.3-1.7-.2-.4-.3-.7-.6-1-.3-.3-.6-.5-1-.6-.3-.1-.8-.3-1.7-.3-1.1-.1-1.4-.1-4-.1zm0 3.5a4.7 4.7 0 110 9.4 4.7 4.7 0 010-9.4zm0 1.8a2.9 2.9 0 100 5.8 2.9 2.9 0 000-5.8zm5-2a1.1 1.1 0 110 2.2 1.1 1.1 0 010-2.2z"/></symbol>
+  <symbol id="icon-check" viewBox="0 0 24 24"><path fill="currentColor" d="M9.5 16.2 5.3 12l-1.4 1.4L9.5 19 20.1 8.4l-1.4-1.4z"/></symbol>
+  <symbol id="icon-quote" viewBox="0 0 32 24"><path fill="currentColor" d="M2 24V15.5C2 8 6.6 2.5 13.2 0l1.9 3.6C10.9 5.4 8.6 8.3 8.3 12H14v12H2zm18 0V15.5C20 8 24.6 2.5 31.2 0l1.9 3.6C28.9 5.4 26.6 8.3 26.3 12H32v12H20z"/></symbol>
 </svg>
 
 <header class="site-header">
   <div class="wrap nav">
     <div class="nav-left">
-      <a href="#top" class="logo">Amelinha</a>
+      <a href="#top" class="logo"><span class="mark"><svg aria-hidden="true"><use href="#icon-plate"/></svg></span> Amelinha</a>
       <input type="checkbox" id="nav-check" class="visually-hidden">
       <nav class="nav-menu" aria-label="Navegação principal">
         <ul class="nav-links">
@@ -506,107 +458,79 @@
 <main id="top">
 
   <section class="hero">
-    <div class="wrap hero-grid">
-      <div>
-        <span class="eyebrow">bairro Petrópolis, Porto Alegre</span>
-        <h1>Almoço de <em>família</em>,<br>tempero de casa.</h1>
-        <p class="hero-sub">Cozinha caseira, mesa farta e aquele acolhimento de avó, na Protásio Alves. É o motivo pelo qual metade do Petrópolis já é cliente da casa.</p>
+    <div class="wrap hero-inner">
+      <span class="kicker">bairro Petrópolis, Porto Alegre</span>
+      <h1>Almoço de família, tempero de casa.</h1>
+      <p class="hero-sub">Cozinha caseira, mesa farta e aquele acolhimento de avó, na Protásio Alves. É o motivo pelo qual metade do Petrópolis já é cliente da casa.</p>
 
-        <div class="rating-pill">
-          <span class="stars" aria-hidden="true">
-            <svg><use href="#icon-star"/></svg><svg><use href="#icon-star"/></svg><svg><use href="#icon-star"/></svg><svg><use href="#icon-star"/></svg><svg><use href="#icon-star"/></svg>
-          </span>
-          4,7 · 242 avaliações no Google
-        </div>
-
-        <div class="hero-ctas">
-          <a class="btn btn-primary" href="https://wa.me/5551984081698?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20reservar%20uma%20mesa%20no%20Amelinha." target="_blank" rel="noopener">
-            <svg aria-hidden="true"><use href="#icon-whatsapp"/></svg> Reservar mesa no WhatsApp
-          </a>
-          <a class="btn btn-ghost" href="#local">
-            <svg aria-hidden="true"><use href="#icon-route"/></svg> Como chegar
-          </a>
-        </div>
-
-        <div class="hero-meta">
-          <span><svg aria-hidden="true"><use href="#icon-pin"/></svg> Av. Protásio Alves, 1761 · Petrópolis</span>
-          <span><svg aria-hidden="true"><use href="#icon-clock"/></svg> Abre quarta às 11h30</span>
-          <span><svg aria-hidden="true"><use href="#icon-plate"/></svg> R$ 20–40 por pessoa</span>
-        </div>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="https://wa.me/5551984081698?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20reservar%20uma%20mesa%20no%20Amelinha." target="_blank" rel="noopener">
+          <svg aria-hidden="true"><use href="#icon-whatsapp"/></svg> Reservar mesa no WhatsApp
+        </a>
+        <a class="btn btn-outline-invert" href="#local">
+          <svg aria-hidden="true"><use href="#icon-route"/></svg> Como chegar
+        </a>
       </div>
 
-      <div class="hero-photo">
-        <div class="frame">
-          <img src="images/salao-mesas.png" alt="Salão do Restaurante Amelinha, com mesas de madeira, paredes vermelhas e luz natural" loading="eager" width="792" height="597">
-        </div>
-        <span class="tag">o cantinho de sempre</span>
+      <div class="rating-pill">
+        <span class="stars" aria-hidden="true">
+          <svg><use href="#icon-star"/></svg><svg><use href="#icon-star"/></svg><svg><use href="#icon-star"/></svg><svg><use href="#icon-star"/></svg><svg><use href="#icon-star"/></svg>
+        </span>
+        4,7 · 242 avaliações no Google
+      </div>
+
+      <div class="hero-meta">
+        <span><svg aria-hidden="true"><use href="#icon-pin"/></svg> Av. Protásio Alves, 1761 · Petrópolis</span>
+        <span><svg aria-hidden="true"><use href="#icon-clock"/></svg> Abre quarta às 11h30</span>
+        <span><svg aria-hidden="true"><use href="#icon-plate"/></svg> R$ 20–40 por pessoa</span>
       </div>
     </div>
   </section>
 
-  <div class="ribbon" aria-hidden="true"></div>
+  <section class="section" style="padding-bottom:0;">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <h2>Conheça nosso espaço</h2>
+        <div class="underline"></div>
+      </div>
+      <div class="photo-grid reveal">
+        <figure><img src="images/salao-balcao.png" alt="Salão do Restaurante Amelinha visto do fundo, com balcão, mesas e cadeiras de madeira" loading="lazy" width="796" height="592"></figure>
+        <figure><img src="images/prato-arroz-feijao.png" alt="Arroz branco e feijão preto servidos à parte, acompanhamento de todos os dias no Amelinha" loading="lazy" width="797" height="545"></figure>
+        <figure><img src="images/prato-alaminuta.webp" alt="À la minuta do Amelinha: bife, arroz, ovo, batata frita, salada e feijão à parte" loading="lazy" width="765" height="1020"></figure>
+        <figure><img src="images/prato-panqueca-carne.png" alt="Prato do dia do Amelinha, servido à mesa" loading="lazy"></figure>
+      </div>
+    </div>
+  </section>
 
   <section class="trust">
     <div class="wrap trust-grid">
-      <div class="trust-item"><strong>4,7 ★</strong><span>nota média no Google</span></div>
-      <div class="trust-item"><strong>242</strong><span>avaliações de clientes</span></div>
-      <div class="trust-item"><strong>R$20–40</strong><span>ticket médio por pessoa</span></div>
-      <div class="trust-item"><strong>100%</strong><span>caseiro, sem pressa</span></div>
+      <div class="trust-item"><strong>4,7 ★</strong><span>Nota no Google</span></div>
+      <div class="trust-item"><strong>242</strong><span>Avaliações de clientes</span></div>
+      <div class="trust-item"><strong>R$20–40</strong><span>Ticket médio por pessoa</span></div>
+      <div class="trust-item"><strong>100%</strong><span>Caseiro, sem pressa</span></div>
     </div>
-  </section>
-
-  <section class="section" id="sobre">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <span class="eyebrow">por que o Amelinha</span>
-        <h2>Não somos nós que dizemos.<br>São os vizinhos do Petrópolis.</h2>
-        <p>Reunimos o que quem já almoçou aqui tem repetido nas avaliações do Google — sem enfeitar nada.</p>
-      </div>
-      <div class="diff-grid">
-        <article class="diff-card reveal">
-          <div class="icon"><svg><use href="#icon-flame"/></svg></div>
-          <h3>Ponto perfeito, sempre</h3>
-          <p><q>Comida (filé no ponto perfeito), show!</q> — é o tipo de comentário que só se ganha na régua, prato após prato.</p>
-        </article>
-        <article class="diff-card reveal">
-          <div class="icon"><svg><use href="#icon-heart"/></svg></div>
-          <h3>Atendimento nota 1000</h3>
-          <p>Recepção de quem trata cliente como visita em casa — é o que mais volta nos comentários dos clientes.</p>
-        </article>
-        <article class="diff-card reveal">
-          <div class="icon"><svg><use href="#icon-grid"/></svg></div>
-          <h3>Estrutura e localização</h3>
-          <p>Bem localizado na Protásio Alves, com boa estrutura para almoço tranquilo em família ou no intervalo do trabalho.</p>
-        </article>
-        <article class="diff-card reveal">
-          <div class="icon"><svg><use href="#icon-plate"/></svg></div>
-          <h3>Preço justo</h3>
-          <p>Média de R$20 a R$40 por pessoa — comida farta e caseira sem pesar no bolso do bairro.</p>
-        </article>
-      </div>
-    </div>
-    <figure class="venue-photo reveal">
-      <img src="images/salao-balcao.png" alt="Salão do Restaurante Amelinha visto do fundo, com balcão, mesas e cadeiras de madeira" loading="lazy" width="796" height="592">
-      <figcaption>Segunda a sábado, sempre com mesa pra você.</figcaption>
-    </figure>
   </section>
 
   <section class="section alt" id="cardapio">
     <div class="wrap">
       <div class="section-head reveal">
-        <span class="eyebrow">sempre por aqui</span>
-        <h2>O que nunca falta na mesa.</h2>
-        <p>Arroz, feijão e à la minuta você encontra todo dia. Fora isso, sempre tem um prato do dia diferente, feito na hora — a gente conta qual é o de hoje no WhatsApp.</p>
+        <h2>O que sai da nossa cozinha</h2>
+        <div class="underline"></div>
+        <p>Arroz, feijão e à la minuta você encontra todo dia. Fora isso, sempre tem um prato do dia diferente, feito na hora.</p>
       </div>
-      <div class="food-photos">
-        <figure class="reveal">
-          <img src="images/prato-arroz-feijao.png" alt="Arroz branco e feijão preto servidos à parte, acompanhamento de todos os dias no Amelinha" loading="lazy" width="797" height="545">
-          <figcaption>arroz e feijão, todo santo dia</figcaption>
-        </figure>
-        <figure class="reveal">
-          <img src="images/prato-alaminuta.webp" alt="À la minuta do Amelinha: bife, arroz, ovo, batata frita, salada e feijão à parte" loading="lazy" width="765" height="1020">
-          <figcaption>à la minuta, na hora que você pedir</figcaption>
-        </figure>
+      <div class="list-card reveal">
+        <div class="list-row">
+          <h3>Arroz e feijão</h3>
+          <p>Servidos à parte, todo santo dia — o acompanhamento que nunca falta na mesa.</p>
+        </div>
+        <div class="list-row">
+          <h3>À la minuta</h3>
+          <p>Bife, arroz, ovo, batata frita e salada, feito na hora que você pedir.</p>
+        </div>
+        <div class="list-row">
+          <h3>Prato do dia</h3>
+          <p>Muda toda semana — manda um oi no WhatsApp e a gente confirma o de hoje.</p>
+        </div>
       </div>
       <div class="menu-note reveal">
         <strong>e hoje, o que tem?</strong>
@@ -618,33 +542,109 @@
     </div>
   </section>
 
-  <section class="section" id="avaliacoes">
+  <section class="section" id="sobre">
     <div class="wrap">
       <div class="section-head reveal">
-        <span class="eyebrow">quem veio, aprovou</span>
-        <h2>242 avaliações, nota 4,7.</h2>
+        <h2>Por que o Amelinha</h2>
+        <div class="underline"></div>
+        <p>Reunimos o que quem já almoçou aqui tem repetido nas avaliações do Google — sem enfeitar nada.</p>
+      </div>
+      <div class="feature-grid">
+        <article class="feature-card reveal">
+          <div class="check"><svg><use href="#icon-check"/></svg></div>
+          <h3>Ponto perfeito, sempre</h3>
+          <p>É o tipo de comentário que só se ganha na régua, prato após prato.</p>
+          <q>"Comida (filé no ponto perfeito), show!"</q>
+        </article>
+        <article class="feature-card reveal">
+          <div class="check"><svg><use href="#icon-check"/></svg></div>
+          <h3>Atendimento nota 1000</h3>
+          <p>Recepção de quem trata cliente como visita em casa — é o que mais volta nos comentários.</p>
+        </article>
+        <article class="feature-card reveal">
+          <div class="check"><svg><use href="#icon-check"/></svg></div>
+          <h3>Estrutura e localização</h3>
+          <p>Bem localizado na Protásio Alves, com boa estrutura para almoço tranquilo em família ou no intervalo do trabalho.</p>
+        </article>
+        <article class="feature-card reveal">
+          <div class="check"><svg><use href="#icon-check"/></svg></div>
+          <h3>Preço justo</h3>
+          <p>Média de R$20 a R$40 por pessoa — comida farta e caseira sem pesar no bolso do bairro.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="wrap story-grid">
+      <div class="story-text reveal">
+        <h2>Almoço resolvido no Petrópolis</h2>
+        <p>Ficamos na Av. Protásio Alves, 1761, no Petrópolis. Abrimos a partir de quarta-feira às 11h30 — chame no WhatsApp pra confirmar o horário do dia.</p>
+        <p>O cardápio é o de sempre: arroz, feijão e à la minuta todo dia, com um prato do dia diferente toda semana.</p>
+        <p>São 242 avaliações no Google e nota 4,7. A maioria vem pelo mesmo motivo: comida no ponto e atendimento de quem trata cliente como visita em casa.</p>
+        <a class="btn btn-primary" href="https://wa.me/5551984081698?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20reservar%20uma%20mesa%20no%20Amelinha." target="_blank" rel="noopener">
+          <svg aria-hidden="true"><use href="#icon-whatsapp"/></svg> Falar no WhatsApp
+        </a>
+      </div>
+      <div class="story-photo reveal">
+        <img src="images/salao-balcao.png" alt="Balcão e mesas do Restaurante Amelinha" loading="lazy" width="796" height="592">
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <h2>Por que escolher a gente</h2>
+        <div class="underline"></div>
+      </div>
+      <div class="reason-grid">
+        <article class="reason-card reveal">
+          <h3>No coração do Petrópolis</h3>
+          <p>Av. Protásio Alves, 1761 — fácil de chegar e com boa estrutura para o almoço.</p>
+        </article>
+        <article class="reason-card reveal">
+          <h3>Sempre com prato do dia</h3>
+          <p>Além do arroz, feijão e à la minuta de todo dia, tem prato do dia diferente — pergunta no WhatsApp.</p>
+        </article>
+        <article class="reason-card reveal">
+          <h3>Caseiro sem pesar no bolso</h3>
+          <p>Média de R$20 a R$40 por pessoa, com fartura de comida de casa.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt" id="avaliacoes">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <h2>O que dizem nossos clientes</h2>
+        <div class="underline"></div>
         <p>Um recorte real do que os clientes escreveram no Google — sem cortes, sem edição.</p>
       </div>
       <div class="review-grid">
         <article class="review-card reveal">
-          <span class="stars" aria-hidden="true"><svg><use href="#icon-star"/></svg><svg><use href="#icon-star"/></svg><svg><use href="#icon-star"/></svg><svg><use href="#icon-star"/></svg><svg><use href="#icon-star"/></svg></span>
+          <svg class="quote-icon" aria-hidden="true"><use href="#icon-quote"/></svg>
           <blockquote>"Ambiente, atendimento, comida (filé no ponto perfeito), show!"</blockquote>
+          <span class="stars" aria-hidden="true"><svg><use href="#icon-star"/></svg><svg><use href="#icon-star"/></svg><svg><use href="#icon-star"/></svg><svg><use href="#icon-star"/></svg><svg><use href="#icon-star"/></svg></span>
           <div class="review-author">
             <div class="review-avatar" aria-hidden="true">R</div>
             <div><span>Rosita Camargo</span><small>Avaliação no Google</small></div>
           </div>
         </article>
         <article class="review-card reveal">
-          <span class="stars" aria-hidden="true"><svg><use href="#icon-star"/></svg><svg><use href="#icon-star"/></svg><svg><use href="#icon-star"/></svg><svg><use href="#icon-star"/></svg><svg><use href="#icon-star"/></svg></span>
+          <svg class="quote-icon" aria-hidden="true"><use href="#icon-quote"/></svg>
           <blockquote>"Nota 1000, melhor almoço do bairro Petrópolis."</blockquote>
+          <span class="stars" aria-hidden="true"><svg><use href="#icon-star"/></svg><svg><use href="#icon-star"/></svg><svg><use href="#icon-star"/></svg><svg><use href="#icon-star"/></svg><svg><use href="#icon-star"/></svg></span>
           <div class="review-author">
             <div class="review-avatar" aria-hidden="true">A</div>
             <div><span>Aires Zingano</span><small>Avaliação no Google</small></div>
           </div>
         </article>
         <article class="review-card reveal">
-          <span class="stars" aria-hidden="true"><svg><use href="#icon-star"/></svg><svg><use href="#icon-star"/></svg><svg><use href="#icon-star"/></svg><svg><use href="#icon-star"/></svg><svg><use href="#icon-star"/></svg></span>
+          <svg class="quote-icon" aria-hidden="true"><use href="#icon-quote"/></svg>
           <blockquote>"Muito bem localizado e com boa estrutura, boa opção para as refeições!"</blockquote>
+          <span class="stars" aria-hidden="true"><svg><use href="#icon-star"/></svg><svg><use href="#icon-star"/></svg><svg><use href="#icon-star"/></svg><svg><use href="#icon-star"/></svg><svg><use href="#icon-star"/></svg></span>
           <div class="review-author">
             <div class="review-avatar" aria-hidden="true">P</div>
             <div><span>Pedro Pessôa Pereira</span><small>Avaliação no Google</small></div>
@@ -655,38 +655,49 @@
     </div>
   </section>
 
-  <div class="ribbon" aria-hidden="true"></div>
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <h2>Perguntas frequentes</h2>
+        <div class="underline"></div>
+      </div>
+      <div class="list-card reveal">
+        <div class="list-row">
+          <h3>Preciso reservar mesa?</h3>
+          <p>Recomendamos sim — chama no WhatsApp e a gente garante seu horário.</p>
+        </div>
+        <div class="list-row">
+          <h3>Que horas vocês abrem?</h3>
+          <p>Abrimos quarta-feira às 11h30. Pra outros dias, é só chamar no WhatsApp que a gente confirma o horário.</p>
+        </div>
+        <div class="list-row">
+          <h3>Tem prato do dia?</h3>
+          <p>Tem! Além do arroz, feijão e à la minuta de sempre, o prato do dia muda toda semana — pergunta no WhatsApp qual é o de hoje.</p>
+        </div>
+        <div class="list-row">
+          <h3>Onde fica o Amelinha?</h3>
+          <p>Av. Protásio Alves, 1761, no Petrópolis, Porto Alegre - RS.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <section class="section alt" id="local">
     <div class="wrap">
       <div class="section-head reveal">
-        <span class="eyebrow">venha almoçar com a gente</span>
-        <h2>Fácil de achar, fácil de voltar.</h2>
+        <h2>Onde e quando nos encontrar</h2>
+        <div class="underline"></div>
       </div>
       <div class="loc-grid">
         <div class="loc-card reveal">
-          <div class="loc-row">
-            <div class="icon"><svg><use href="#icon-pin"/></svg></div>
-            <div>
-              <h3>Endereço</h3>
-              <p>Av. Protásio Alves, 1761 — Petrópolis, Porto Alegre - RS, 90410-001</p>
-            </div>
-          </div>
-          <div class="loc-row">
-            <div class="icon"><svg><use href="#icon-clock"/></svg></div>
-            <div>
-              <h3>Horário</h3>
-              <p>Abre quarta-feira às 11h30. Ligue antes para confirmar o horário do dia.</p>
-            </div>
-          </div>
-          <div class="loc-row">
-            <div class="icon"><svg><use href="#icon-phone"/></svg></div>
-            <div>
-              <h3>Telefone / WhatsApp</h3>
-              <p><a class="plain" href="tel:+5551984081698">(51) 98408-1698</a></p>
-            </div>
-          </div>
-          <div class="hero-ctas loc-actions">
+          <h3><svg aria-hidden="true"><use href="#icon-clock"/></svg> Horário de funcionamento</h3>
+          <p>Segunda a sábado, sempre com mesa pra você. Abre quarta-feira às 11h30 — ligue antes para confirmar o horário do dia.</p>
+        </div>
+        <div class="loc-card reveal">
+          <h3><svg aria-hidden="true"><use href="#icon-pin"/></svg> Onde estamos</h3>
+          <p>Av. Protásio Alves, 1761 — Petrópolis, Porto Alegre - RS, 90410-001</p>
+          <p><a class="plain" href="tel:+5551984081698">(51) 98408-1698</a></p>
+          <div class="hero-ctas">
             <a class="btn btn-primary" href="https://wa.me/5551984081698?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20reservar%20uma%20mesa%20no%20Amelinha." target="_blank" rel="noopener">
               <svg aria-hidden="true"><use href="#icon-whatsapp"/></svg> Reservar no WhatsApp
             </a>
@@ -695,11 +706,6 @@
             </a>
           </div>
         </div>
-        <a class="loc-map reveal" href="https://www.google.com/maps/search/?api=1&query=Restaurante+Amelinha+Av.+Prot%C3%A1sio+Alves+1761+Porto+Alegre" target="_blank" rel="noopener">
-          <span class="pin"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="#icon-pin"/></svg></span>
-          <h3>Petrópolis, Porto Alegre</h3>
-          <p>Toque para abrir a localização exata do Amelinha no Google Maps e traçar sua rota.</p>
-        </a>
       </div>
     </div>
   </section>
@@ -709,10 +715,10 @@
       <h2 class="reveal">Sua mesa está te esperando.</h2>
       <p class="reveal">Chame agora no WhatsApp e garanta seu horário no Amelinha.</p>
       <div class="hero-ctas reveal">
-        <a class="btn btn-primary" href="https://wa.me/5551984081698?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20reservar%20uma%20mesa%20no%20Amelinha." target="_blank" rel="noopener">
+        <a class="btn btn-solid-invert" href="https://wa.me/5551984081698?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20reservar%20uma%20mesa%20no%20Amelinha." target="_blank" rel="noopener">
           <svg aria-hidden="true"><use href="#icon-whatsapp"/></svg> Reservar mesa agora
         </a>
-        <a class="btn btn-ghost" href="tel:+5551984081698">
+        <a class="btn btn-outline-invert" href="tel:+5551984081698">
           <svg aria-hidden="true"><use href="#icon-phone"/></svg> (51) 98408-1698
         </a>
       </div>
@@ -722,18 +728,21 @@
 </main>
 
 <footer>
-  <div class="wrap footer-grid">
-    <div>
-      <div class="footer-logo">Amelinha</div>
-      <p>Av. Protásio Alves, 1761 — Petrópolis, Porto Alegre - RS</p>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">Amelinha</div>
+        <p>Av. Protásio Alves, 1761 — Petrópolis, Porto Alegre - RS</p>
+      </div>
+      <ul class="footer-links">
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#cardapio">Cardápio</a></li>
+        <li><a href="#avaliacoes">Avaliações</a></li>
+        <li><a href="#local">Localização</a></li>
+        <li><a href="https://www.instagram.com/restaurante_amelinhapoa/" target="_blank" rel="noopener">Instagram</a></li>
+      </ul>
     </div>
-    <ul class="footer-links">
-      <li><a href="#sobre">Sobre</a></li>
-      <li><a href="#cardapio">Cardápio</a></li>
-      <li><a href="#avaliacoes">Avaliações</a></li>
-      <li><a href="#local">Localização</a></li>
-      <li><a href="https://www.instagram.com/restaurante_amelinhapoa/" target="_blank" rel="noopener">Instagram</a></li>
-    </ul>
+    <p class="footer-copy">© 2026 Restaurante Amelinha</p>
   </div>
 </footer>
 
